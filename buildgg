@@ -1,0 +1,55 @@
+{
+  "name": "AquaWorld",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "AquaWorld",
+  "author": "BISolutions <office.bisolutions.com.np>",
+  "main": "./app.js",
+  "repository":"http://bierp.aquaworld.com.np/",
+  "homepage":"http://bierp.aquaworld.com.np/",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron ./app.js",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "com.aquaworld.app",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+        "target": [
+          {
+            "target": "nsis",
+            "arch": [
+              "x64",
+              "ia32"
+            ]
+          }
+        ]
+      }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  }
+}
