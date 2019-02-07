@@ -22,7 +22,7 @@ function createMainScreen() {
       // Don't show the window until it ready, this prevents any white flickering
       show: false,
       //frame: false,
-      icon: __dirname + 'assets/icons/png/logo.png',
+      icon: '/home/mahesh/tmp/electron/inhouse/assets/icons/png/logo.png',
       webPreferences: {
         // Disable node integration in remote page
         nodeIntegration: false
@@ -43,10 +43,11 @@ function createMainScreen() {
             loadingScreen.close();
         }
 
-      window.show()
-      sleep(0).then(() => { //3000
-      window.maximize()
-      })
+      window.show();
+      window.maximize();
+      // sleep(0).then(() => { //3000
+      // window.maximize()
+      // })
 
       if (loadingScreen) {
             let loadingScreenBounds = loadingScreen.getBounds();
@@ -69,6 +70,7 @@ function createLoadingScreen() {
     width: 800,
     height: 600,
     show: false,
+    icon: '/home/mahesh/tmp/electron/inhouse/assets/icons/png/logo.png',
     frame: false,
   }));
 

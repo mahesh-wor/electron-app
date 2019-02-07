@@ -10,7 +10,10 @@
     "postinstall": "install-app-deps",
     "pack": "build --dir",
     "dist": "build",
-    "start": "electron app.js"
+    "start": "electron app.js",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64  --prune=true --out=release-builds",
+    "package-win": "electron-packager . bi-inhouse-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=/home/mahesh/tmp/electron/inhouse/assets/icons/png/logo.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"BI Inhouse App\"",
+    "package-linux": "electron-packager . bi-inhouse-app --overwrite --asar=true --platform=linux --arch=x64 --icon=/home/mahesh/tmp/electron/inhouse/assets/icons/png/logo.png --prune=true --out=release-builds"
   },
   "license": "ISC",
   "devDependencies": {
@@ -18,7 +21,7 @@
     "electron-builder": "^20.38.5"
   },
   "build": {
-    "appId": "com.aquaworld.app",
+    "appId": "com.bisolutions.app",
     "dmg": {
       "contents": [
         {
